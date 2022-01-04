@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { cities } from '../controllers/cities';
 import { City } from '../types/cities';
+import { Letter } from '../types/common';
 
 const citiesRouter = Router();
 
@@ -18,7 +19,12 @@ citiesRouter.get('/name/:name/:limit?', (req, res) => {
   const results: City[] = cities.byName(name, formattedLimit);
   res.send(results);
 });
-
+citiesRouter.get('/first-letter/:firstLetter/:limit?', (req, res) => {
+  const { limit, firstLetter } = req.params;
+  const formattedLimit = limit ? Number(limit) : undefined;
+  const results: City[] = cities.byFirstLetter(firstLetter, formattedLimit);
+  res.send(results);
+});
 citiesRouter.get('/department-code/:departmentCode/:limit?', (req, res) => {
   const { departmentCode, limit } = req.params;
   const formattedLimit = limit ? Number(limit) : undefined;

@@ -1,7 +1,7 @@
-import { default as cityDb } from '../databases/cities.json';
+import { cityDb } from '../databases/cities';
 import { City } from '../types/cities';
 
-const cityArray: City[] = cityDb;
+const cityArray: City[] = cityDb.all();
 const tempCities: City[] = [];
 
 function byName(name: string, limit?: number): City[] {
@@ -36,8 +36,12 @@ function byDepartmentCode(departmentCode: string, limit?: number): City[] {
   });
   return limit ? tempCities.slice(0, limit) : tempCities;
 }
+function byFirstLetter(letter: string, limit?: number): City[] {
+  return limit ? cityDb.byFirstLetter(letter).slice(0, limit) : cityDb.byFirstLetter(letter);
+}
 export const cities = {
   byName,
+  byFirstLetter,
   byDepartmentCode,
   byInseeCode,
   byZipCode,
