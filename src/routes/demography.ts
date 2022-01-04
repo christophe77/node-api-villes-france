@@ -4,11 +4,11 @@ import { Demography } from '../types/demography';
 
 const demographyRouter = Router();
 
-demographyRouter.get('/', function (req, res) {
+demographyRouter.get('/', (req, res) => {
   res.send('Demography endpoint');
 });
 
-demographyRouter.get('/insee-code/:inseeCode', function (req, res) {
+demographyRouter.get('/insee-code/:inseeCode', (req, res) => {
   const { inseeCode } = req.params;
   demography.byInseeCode(inseeCode).then((results: Demography) => {
     res.send(results);
