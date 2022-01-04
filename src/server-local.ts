@@ -6,8 +6,10 @@ import regionsRouter from './routes/regions';
 import demographyRouter from './routes/demography';
 
 const app: Application = express();
+const router = express.Router();
 
 app.use(express.json());
+app.use('/.netlify/functions/server', router) // path must route to lambda
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/cities', citiesRouter);
