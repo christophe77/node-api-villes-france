@@ -6,10 +6,7 @@
   "author": "christophe bellec <chrisb@gmx.fr>",
   "license": "MIT",
   "scripts": {
-    "predev": "yarn swagger",
-    "prebuild": "yarn swagger",
-    "swagger": "tsoa spec",
-    "start:dev": "ts-node-dev ./src/index.ts tsoa spec",
+    "start:dev": "ts-node-dev ./src/index.ts",
     "start": "tsc && node ./dist/index.js",
     "build": "tsc",
     "lint": "eslint src/**/*.ts",
@@ -34,7 +31,6 @@
     "express": "^4.17.2",
     "jsdom": "^19.0.0",
     "morgan": "^1.10.0",
-    "swagger-ui-express": "^4.3.0",
-    "tsoa": "^3.14.1"
+    "swagger-ui-express": "^4.3.0"
   }
 }
