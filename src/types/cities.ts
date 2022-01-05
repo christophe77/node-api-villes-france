@@ -8,4 +8,4 @@ export type City = {
   gps_lat: number;
   gps_lng: number;
 };
-
+export type AllCities = [City[]]

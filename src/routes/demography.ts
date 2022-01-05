@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { demography } from '../controllers/demography';
-import { Demography } from '../types/demography';
 
 const demographyRouter = Router();
 
@@ -8,11 +7,10 @@ demographyRouter.get('/', (req, res) => {
   res.send('Demography endpoint');
 });
 
-demographyRouter.get('/insee-code/:inseeCode', (req, res) => {
+demographyRouter.get('/insee-code/:inseeCode', async(req, res) => {
   const { inseeCode } = req.params;
-  demography.byInseeCode(inseeCode).then((results: Demography) => {
-    res.send(results);
-  });
+  const results = await demography.byInseeCode(inseeCode);
+  res.send(results)
 });
 
 export default demographyRouter;

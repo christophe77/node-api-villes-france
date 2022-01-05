@@ -1,6 +1,6 @@
 import { Response } from 'express';
 import https from 'https';
-import { capitalize } from '../utils/utils';
+import { capitalize } from '../utils';
 
 function httpsRequest(args: string, res: Response) {
   const options = {

@@ -67,9 +67,14 @@ const defaultCity: City = {
   gps_lat: 0,
   gps_lng: 0,
 };
+const allCities = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
+
 const byFirstLetter = (letter: string): City[] => {
-  const allCities = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
-  const letterInTheCity = allCities.find((cityArray) => cityArray[0].slug.charAt(0) === letter);
+  const letterInTheCity = allCities.find((cityArray) => {
+    if (cityArray[0].slug.charAt(0) === letter) {
+      return cityArray;
+    }
+  });
   return letterInTheCity ? letterInTheCity : [defaultCity];
 };
 export const cityDb = {

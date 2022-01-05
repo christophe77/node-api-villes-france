@@ -3,10 +3,6 @@ import { politic } from '../controllers/politic';
 
 const politicRouter = Router();
 
-politicRouter.get('/', (req, res) => {
-  res.send('Politic endpoint');
-});
-
 politicRouter.get('/region/:regionName', (req, res) => {
   const { regionName } = req.params;
   politic.byRegion(regionName, res);

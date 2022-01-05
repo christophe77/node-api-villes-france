@@ -1,4 +1,7 @@
 import express, { Application, Request, Response } from 'express';
+import morgan from "morgan";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from './swagger.json';
 import citiesRouter from './routes/cities';
 import departmentsRouter from './routes/departments';
 import regionsRouter from './routes/regions';
@@ -10,6 +13,8 @@ const port = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan("tiny"));
+app.use('/docs', swaggerUi.serve);
 
 app.use('/cities', citiesRouter);
 app.use('/departments', departmentsRouter);
@@ -22,6 +27,7 @@ app.get('/', async (req: Request, res: Response): Promise<Response> => {
     message: 'Villes de France API',
   });
 });
+app.get('/docs', swaggerUi.setup(swaggerDocument));
 
 try {
   app.listen(port, (): void => {

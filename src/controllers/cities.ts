@@ -2,17 +2,18 @@ import { cityDb } from '../databases/cities';
 import { City } from '../types/cities';
 
 const cityArray: City[] = cityDb.all();
-const tempCities: City[] = [];
 
 function byName(name: string, limit?: number): City[] {
+  const tempCities: City[] = [];
   cityArray.forEach((city: City) => {
-    if (city.name?.includes(name)) {
+    if (city.name?.toLocaleLowerCase().includes(name)) {
       tempCities.push(city);
     }
   });
   return limit ? tempCities.slice(0, limit) : tempCities;
 }
 function byZipCode(zipCode: string, limit?: number): City[] {
+  const tempCities: City[] = [];
   cityArray.forEach((city: City) => {
     if (city.zip_code?.includes(zipCode)) {
       tempCities.push(city);
@@ -21,6 +22,7 @@ function byZipCode(zipCode: string, limit?: number): City[] {
   return limit ? tempCities.slice(0, limit) : tempCities;
 }
 function byInseeCode(inseeCode: string, limit?: number): City[] {
+  const tempCities: City[] = [];
   cityArray.forEach((city: City) => {
     if (city.insee_code?.includes(inseeCode)) {
       tempCities.push(city);
@@ -29,6 +31,7 @@ function byInseeCode(inseeCode: string, limit?: number): City[] {
   return limit ? tempCities.slice(0, limit) : tempCities;
 }
 function byDepartmentCode(departmentCode: string, limit?: number): City[] {
+  const tempCities: City[] = [];
   cityArray.forEach((city: City) => {
     if (city.department_code?.includes(departmentCode)) {
       tempCities.push(city);
@@ -45,5 +48,4 @@ export const cities = {
   byDepartmentCode,
   byInseeCode,
   byZipCode,
-  cityArray,
 };

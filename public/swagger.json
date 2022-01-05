@@ -1,0 +1,104 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"DemographyData": {
+				"properties": {
+					"population_totale": {
+						"type": "number",
+						"format": "double"
+					},
+					"population_comptee_a_part": {
+						"type": "number",
+						"format": "double"
+					},
+					"population_municipale": {
+						"type": "number",
+						"format": "double"
+					},
+					"annee": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"population_totale",
+					"population_comptee_a_part",
+					"population_municipale",
+					"annee"
+				],
+				"type": "object"
+			},
+			"Demography": {
+				"properties": {
+					"datas": {
+						"items": {
+							"$ref": "#/components/schemas/DemographyData"
+						},
+						"type": "array"
+					},
+					"inseeCode": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"datas",
+					"inseeCode"
+				],
+				"type": "object"
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "node-api-villes-france",
+		"version": "1.0.0",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {
+			"name": "christophe bellec ",
+			"email": "chrisb@gmx.fr"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/demography/insee-code/{inseeCode}": {
+			"get": {
+				"operationId": "GetDemography",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Demography"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "inseeCode",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
