@@ -775,6 +775,53 @@
           }
         }
       }
+    },
+    "/images/name/{name}/{limit}": {
+      "get": {
+        "x-swagger-router-controller": "images",
+        "operationId": "name",
+        "tags": ["images"],
+        "description": "Get city pictures from google image",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Full name of the city"
+          },
+          { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "examples": {
+              "application/json": [
+                {
+                  "id": 0,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Quimper2011.png"
+                },
+                {
+                  "id": 1,
+                  "url": "https://img-4.linternaute.com/HLJDqlPRu3rvAwoUkiXtbAqKjCo=/1240x/smart/8424da911bf1488f82a6da8d627d781a/ccmcms-linternaute/23651022.jpg"
+                },
+                {
+                  "id": 2,
+                  "url": "https://media.gettyimages.com/photos/quimper-place-de-la-terre-au-duc-picture-id458067411?s=612x612"
+                },
+                {
+                  "id": 3,
+                  "url": "https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=47.99595&lon=-4.09992&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*"
+                },
+                {
+                  "id": 4,
+                  "url": "https://edito.seloger.com/sites/default/files/styles/735x412/public/edito_migrate/article/image/immobiler-quimper.jpg?itok=bIqZs404"
+                }
+              ]
+            }
+          }
+        }
+      }
     }
   }
 }

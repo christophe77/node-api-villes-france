@@ -3,10 +3,6 @@ import { cities } from '../controllers/cities';
 
 const citiesRouter = Router();
 
-citiesRouter.get('/', (req, res) => {
-  res.send('Cities endpoint');
-});
-
 citiesRouter.get('/name/:name/:limit?', (req, res) => {
   const { name, limit } = req.params;
   const formattedLimit = limit ? Number(limit) : undefined;
