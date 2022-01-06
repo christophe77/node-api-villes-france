@@ -10,7 +10,7 @@ import politicRouter from './routes/politic';
 import imagesRouter from './routes/images';
 
 const app: Application = express();
-const port = 3000;
+const port = 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
