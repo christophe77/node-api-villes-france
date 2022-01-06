@@ -822,6 +822,45 @@
           }
         }
       }
+    },
+    "/religion/coordinates/{lat}/{lon}/{around}": {
+      "get": {
+        "x-swagger-router-controller": "religion",
+        "operationId": "coordinates",
+        "tags": ["religion"],
+        "description": "Get religious infrastructures from coordinates",
+        "parameters": [
+          {
+            "name": "lat",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Latitude of the city"
+          },
+          {
+            "name": "lon",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Longitude of the city"
+          },
+          {
+            "name": "around",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Permiter of search in meters (m)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "examples": {
+              "application/json": []
+            }
+          }
+        }
+      }
     }
   }
 }

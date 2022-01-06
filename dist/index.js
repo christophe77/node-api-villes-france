@@ -22,8 +22,9 @@ const regions_1 = __importDefault(require("./routes/regions"));
 const demography_1 = __importDefault(require("./routes/demography"));
 const politic_1 = __importDefault(require("./routes/politic"));
 const images_1 = __importDefault(require("./routes/images"));
+const religion_1 = __importDefault(require("./routes/religion"));
 const app = (0, express_1.default)();
-const port = 3000;
+const port = 8080;
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, morgan_1.default)('tiny'));
@@ -34,6 +35,7 @@ app.use('/regions', regions_1.default);
 app.use('/demography', demography_1.default);
 app.use('/politic', politic_1.default);
 app.use('/images', images_1.default);
+app.use('/religion', religion_1.default);
 app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     return res.status(200).send({
         message: 'Villes de France API',

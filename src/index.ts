@@ -8,6 +8,7 @@ import regionsRouter from './routes/regions';
 import demographyRouter from './routes/demography';
 import politicRouter from './routes/politic';
 import imagesRouter from './routes/images';
+import religionRouter from './routes/religion';
 
 const app: Application = express();
 const port = 8080;
@@ -23,6 +24,7 @@ app.use('/regions', regionsRouter);
 app.use('/demography', demographyRouter);
 app.use('/politic', politicRouter);
 app.use('/images', imagesRouter);
+app.use('/religion', religionRouter);
 
 app.get('/', async (req: Request, res: Response): Promise<Response> => {
   return res.status(200).send({
