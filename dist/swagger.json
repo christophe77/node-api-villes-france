@@ -1,0 +1,827 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Open API Villes de France",
+        "description": "",
+        "version": "1.0"
+    },
+    "produces": ["application/json"],
+    "paths": {
+        "/cities/name/{name}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "cities",
+                "operationId": "name",
+                "tags": ["cities"],
+                "description": "Get cities by name",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name or partial name of a city."
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 9522,
+                                    "department_code": "27",
+                                    "insee_code": "27003",
+                                    "zip_code": "27400",
+                                    "name": "Acquigny",
+                                    "slug": "acquigny",
+                                    "gps_lat": 49.16030031088084,
+                                    "gps_lng": 1.1727592746114
+                                },
+                                {
+                                    "id": 22013,
+                                    "department_code": "58",
+                                    "insee_code": "58012",
+                                    "zip_code": "58310",
+                                    "name": "Arquian",
+                                    "slug": "arquian",
+                                    "gps_lat": 47.53247267973856,
+                                    "gps_lng": 2.99764986928105
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/cities/first-letter/{firstLetter}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "cities",
+                "operationId": "letter",
+                "tags": ["cities"],
+                "description": "Get cities by first letter",
+                "parameters": [
+                    {
+                        "name": "firstLetter",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "First letter of a city."
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 3,
+                                    "department_code": "01",
+                                    "insee_code": "01004",
+                                    "zip_code": "01500",
+                                    "name": "Ambérieu-en-Bugey",
+                                    "slug": "amberieu en bugey",
+                                    "gps_lat": 45.95840939226519,
+                                    "gps_lng": 5.3759920441989
+                                },
+                                {
+                                    "id": 4,
+                                    "department_code": "01",
+                                    "insee_code": "01005",
+                                    "zip_code": "01330",
+                                    "name": "Ambérieux-en-Dombes",
+                                    "slug": "amberieux en dombes",
+                                    "gps_lat": 46.00012039215686,
+                                    "gps_lng": 4.9106016993464
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/cities/department-code/{departmentCode}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "cities",
+                "operationId": "department",
+                "tags": ["cities"],
+                "description": "Get cities by department code",
+                "parameters": [
+                    {
+                        "name": "departmentCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Department code ('01', '29', '56',...)"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 10510,
+                                    "department_code": "29",
+                                    "insee_code": "29001",
+                                    "zip_code": "29560",
+                                    "name": "Argol",
+                                    "slug": "argol",
+                                    "gps_lat": 48.24735033536582,
+                                    "gps_lng": -4.30613423780488
+                                },
+                                {
+                                    "id": 10511,
+                                    "department_code": "29",
+                                    "insee_code": "29002",
+                                    "zip_code": "29300",
+                                    "name": "Arzano",
+                                    "slug": "arzano",
+                                    "gps_lat": 47.89053789029536,
+                                    "gps_lng": -3.44289206751055
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/cities/zip-code/{zipCode}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "cities",
+                "operationId": "zipcode",
+                "tags": ["cities"],
+                "description": "Get cities by zip code",
+                "parameters": [
+                    {
+                        "name": "zipCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full or partial zip code"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 10564,
+                                    "department_code": "29",
+                                    "insee_code": "29058",
+                                    "zip_code": "29170",
+                                    "name": "Fouesnant",
+                                    "slug": "fouesnant",
+                                    "gps_lat": 47.80672999999997,
+                                    "gps_lng": -4.00863980033278
+                                },
+                                {
+                                    "id": 10657,
+                                    "department_code": "29",
+                                    "insee_code": "29161",
+                                    "zip_code": "29170",
+                                    "name": "Pleuven",
+                                    "slug": "pleuven",
+                                    "gps_lat": 47.91276333333334,
+                                    "gps_lng": -4.0469041025641
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/cities/insee-code/{inseeCode}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "cities",
+                "operationId": "inseeCode",
+                "tags": ["cities"],
+                "description": "Get cities by insee code",
+                "parameters": [
+                    {
+                        "name": "inseeCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full or partial insee code"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 24132,
+                                    "department_code": "62",
+                                    "insee_code": "62069",
+                                    "zip_code": "62310",
+                                    "name": "Azincourt",
+                                    "slug": "azincourt",
+                                    "gps_lat": 50.45770654867255,
+                                    "gps_lng": 2.11519752212389
+                                },
+                                {
+                                    "id": 25489,
+                                    "department_code": "64",
+                                    "insee_code": "64069",
+                                    "zip_code": "64260",
+                                    "name": "Aste-Béon",
+                                    "slug": "aste beon",
+                                    "gps_lat": 43.03165614583335,
+                                    "gps_lng": -0.40630927083333
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/departments/all": {
+            "get": {
+                "x-swagger-router-controller": "departments",
+                "operationId": "all",
+                "tags": ["departments"],
+                "description": "Get all departments",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 1,
+                                    "region_code": "84",
+                                    "code": "01",
+                                    "name": "Ain",
+                                    "slug": "ain"
+                                },
+                                {
+                                    "id": 2,
+                                    "region_code": "32",
+                                    "code": "02",
+                                    "name": "Aisne",
+                                    "slug": "aisne"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/departments/name/{name}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "departments",
+                "operationId": "name",
+                "tags": ["departments"],
+                "description": "Get departments by name",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full or partial name of the department"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 31,
+                                    "region_code": "76",
+                                    "code": "30",
+                                    "name": "Gard",
+                                    "slug": "gard"
+                                },
+                                {
+                                    "id": 32,
+                                    "region_code": "76",
+                                    "code": "31",
+                                    "name": "Haute-Garonne",
+                                    "slug": "haute garonne"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/departments/department-code/{departmentCode}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "departments",
+                "operationId": "departmentCode",
+                "tags": ["departments"],
+                "description": "Get departments by code",
+                "parameters": [
+                    {
+                        "name": "departmentCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full or partial code of the department"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 2,
+                                    "region_code": "32",
+                                    "code": "02",
+                                    "name": "Aisne",
+                                    "slug": "aisne"
+                                },
+                                {
+                                    "id": 12,
+                                    "region_code": "76",
+                                    "code": "12",
+                                    "name": "Aveyron",
+                                    "slug": "aveyron"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/departments/region-code/{regionCode}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "departments",
+                "operationId": "regionCode",
+                "tags": ["departments"],
+                "description": "Get departments by region code",
+                "parameters": [
+                    {
+                        "name": "regionCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full or partial code of the region"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 16,
+                                    "region_code": "75",
+                                    "code": "16",
+                                    "name": "Charente",
+                                    "slug": "charente"
+                                },
+                                {
+                                    "id": 17,
+                                    "region_code": "75",
+                                    "code": "17",
+                                    "name": "Charente-Maritime",
+                                    "slug": "charente maritime"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/regions/all": {
+            "get": {
+                "x-swagger-router-controller": "regions",
+                "operationId": "all",
+                "tags": ["regions"],
+                "description": "Get all regions",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 1,
+                                    "code": "01",
+                                    "name": "Guadeloupe",
+                                    "slug": "guadeloupe"
+                                },
+                                {
+                                    "id": 2,
+                                    "code": "02",
+                                    "name": "Martinique",
+                                    "slug": "martinique"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/regions/name/{name}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "regions",
+                "operationId": "regionName",
+                "tags": ["regions"],
+                "description": "Get regions by name",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full or partial name of the region"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 7,
+                                    "code": "24",
+                                    "name": "Centre-Val de Loire",
+                                    "slug": "centre val de loire"
+                                },
+                                {
+                                    "id": 12,
+                                    "code": "52",
+                                    "name": "Pays de la Loire",
+                                    "slug": "pays de la loire"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/regions/region-code/{regionCode}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "regions",
+                "operationId": "regionCode",
+                "tags": ["regions"],
+                "description": "Get regions by code",
+                "parameters": [
+                    {
+                        "name": "regionCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full or partial code of the region"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 17,
+                                    "code": "93",
+                                    "name": "Provence-Alpes-Côte d'Azur",
+                                    "slug": "provence alpes cote dazur"
+                                },
+                                {
+                                    "id": 18,
+                                    "code": "94",
+                                    "name": "Corse",
+                                    "slug": "corse"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/politic/city/{cityName}": {
+            "get": {
+                "x-swagger-router-controller": "politic",
+                "operationId": "cityName",
+                "tags": ["politic"],
+                "description": "Get politicians by city name",
+                "parameters": [
+                    {
+                        "name": "cityName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full name of the city"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "datasetid": "donnees-du-repertoire-national-des-elus",
+                                    "recordid": "246ae8de3a50db9a8f25931fb5ab7e443c072094",
+                                    "fields": {
+                                        "reg_code": "53",
+                                        "code_sexe": "F",
+                                        "epci_code": "242900314",
+                                        "dep_name": "Finistère",
+                                        "code_nationalite": "FR",
+                                        "reg_name": "Bretagne",
+                                        "dep_code": "29",
+                                        "code_de_la_categorie_socio_professionnelle": "33",
+                                        "date_de_debut_du_mandat": "2020-06-28",
+                                        "epci_name": "Brest Métropole",
+                                        "com_code": "29019",
+                                        "date_de_naissance": "1983-09-03",
+                                        "libelle_de_la_categorie_socio_professionnelle": "Cadre de la fonction publique",
+                                        "nom_de_l_elu": "CLEUZIOU",
+                                        "prenom_de_l_elu": "Anne-Catherine",
+                                        "filename": "Municipal",
+                                        "com_name": "Brest"
+                                    },
+                                    "record_timestamp": "2022-01-01T21:00:04.073000+00:00"
+                                },
+                                {
+                                    "datasetid": "donnees-du-repertoire-national-des-elus",
+                                    "recordid": "929ce5b812005c4c1d24a4083426b0e750439983",
+                                    "fields": {
+                                        "reg_code": "53",
+                                        "code_sexe": "M",
+                                        "epci_code": "242900314",
+                                        "date_de_debut_de_la_fonction": "2020-04-07",
+                                        "libelle_de_la_fonction": "10ème adjoint au Maire",
+                                        "dep_name": "Finistère",
+                                        "code_nationalite": "FR",
+                                        "reg_name": "Bretagne",
+                                        "dep_code": "29",
+                                        "code_de_la_categorie_socio_professionnelle": "55",
+                                        "date_de_debut_du_mandat": "2020-06-28",
+                                        "epci_name": "Brest Métropole",
+                                        "com_code": "29019",
+                                        "date_de_naissance": "1978-02-04",
+                                        "libelle_de_la_categorie_socio_professionnelle": "Employé de commerce",
+                                        "nom_de_l_elu": "NÉDÉLEC",
+                                        "prenom_de_l_elu": "Yohann",
+                                        "filename": "Municipal",
+                                        "com_name": "Brest"
+                                    },
+                                    "record_timestamp": "2022-01-01T21:00:04.073000+00:00"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/politic/department/{departmentName}": {
+            "get": {
+                "x-swagger-router-controller": "politic",
+                "operationId": "departmentName",
+                "tags": ["politic"],
+                "description": "Get politicians by department name",
+                "parameters": [
+                    {
+                        "name": "departmentName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full name of the department"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "datasetid": "donnees-du-repertoire-national-des-elus",
+                                    "recordid": "6703763149fd4c99494837f37066949623195db5",
+                                    "fields": {
+                                        "reg_code": "53",
+                                        "code_sexe": "M",
+                                        "epci_code": "200067072",
+                                        "date_de_debut_de_la_fonction": "2020-11-07",
+                                        "libelle_de_la_fonction": "Vice-président du conseil communautaire",
+                                        "dep_name": "Finistère",
+                                        "reg_name": "Bretagne",
+                                        "dep_code": "29",
+                                        "code_de_la_categorie_socio_professionnelle": "71",
+                                        "date_de_debut_du_mandat": "2020-05-18",
+                                        "epci_name": "CC Haut-Léon Communauté",
+                                        "com_code": "29192",
+                                        "date_de_naissance": "1959-03-01",
+                                        "libelle_de_la_categorie_socio_professionnelle": "Ancien agriculteur exploitant",
+                                        "nom_de_l_elu": "GUEN",
+                                        "prenom_de_l_elu": "Patrick",
+                                        "filename": "Communautaire (EPCI)",
+                                        "com_name": "Plougoulm"
+                                    },
+                                    "record_timestamp": "2022-01-01T21:14:36.627000+00:00"
+                                },
+                                {
+                                    "datasetid": "donnees-du-repertoire-national-des-elus",
+                                    "recordid": "88943a864592ecb392be6d35f334fe164c9de923",
+                                    "fields": {
+                                        "reg_code": "53",
+                                        "code_sexe": "M",
+                                        "epci_code": "200067072",
+                                        "dep_name": "Finistère",
+                                        "reg_name": "Bretagne",
+                                        "dep_code": "29",
+                                        "code_de_la_categorie_socio_professionnelle": "74",
+                                        "date_de_debut_du_mandat": "2020-05-18",
+                                        "epci_name": "CC Haut-Léon Communauté",
+                                        "com_code": "29259",
+                                        "date_de_naissance": "1956-04-11",
+                                        "libelle_de_la_categorie_socio_professionnelle": "Ancien cadre",
+                                        "nom_de_l_elu": "CONSTANTIN",
+                                        "prenom_de_l_elu": "Marc",
+                                        "filename": "Communautaire (EPCI)",
+                                        "com_name": "Saint-Pol-De-Léon"
+                                    },
+                                    "record_timestamp": "2022-01-01T21:14:36.627000+00:00"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/politic/region/{regionName}": {
+            "get": {
+                "x-swagger-router-controller": "politic",
+                "operationId": "regionName",
+                "tags": ["politic"],
+                "description": "Get politicians by region name",
+                "parameters": [
+                    {
+                        "name": "regionName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full name of the region"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "datasetid": "donnees-du-repertoire-national-des-elus",
+                                    "recordid": "a2bd44367a4704619f2d7434bb75ddbe7ca8561c",
+                                    "fields": {
+                                        "reg_code": "53",
+                                        "code_sexe": "F",
+                                        "epci_code": "243500782",
+                                        "dep_name": "Ille-Et-Vilaine",
+                                        "code_nationalite": "FR",
+                                        "reg_name": "Bretagne",
+                                        "dep_code": "35",
+                                        "code_de_la_categorie_socio_professionnelle": "52",
+                                        "date_de_debut_du_mandat": "2020-05-18",
+                                        "epci_name": "CA du Pays de Saint Malo Agglomération",
+                                        "com_code": "35070",
+                                        "date_de_naissance": "1978-07-01",
+                                        "libelle_de_la_categorie_socio_professionnelle": "Employé civil et agent de service de la fonction publique",
+                                        "nom_de_l_elu": "LE BRETON",
+                                        "prenom_de_l_elu": "Marina",
+                                        "filename": "Municipal",
+                                        "com_name": "Châteauneuf-D'Ille-Et-Vilaine"
+                                    },
+                                    "record_timestamp": "2022-01-01T21:00:04.073000+00:00"
+                                },
+                                {
+                                    "datasetid": "donnees-du-repertoire-national-des-elus",
+                                    "recordid": "df609a3b4e099b2967eb9e897da5fed4d4546de8",
+                                    "fields": {
+                                        "reg_code": "53",
+                                        "code_sexe": "M",
+                                        "epci_code": "200039022",
+                                        "dep_name": "Ille-Et-Vilaine",
+                                        "code_nationalite": "FR",
+                                        "reg_name": "Bretagne",
+                                        "dep_code": "35",
+                                        "code_de_la_categorie_socio_professionnelle": "46",
+                                        "date_de_debut_du_mandat": "2020-05-18",
+                                        "epci_name": "CA Vitré Communauté",
+                                        "com_code": "35072",
+                                        "date_de_naissance": "1987-12-18",
+                                        "libelle_de_la_categorie_socio_professionnelle": "Profession intermédiaire administrative et commerciale des entreprises",
+                                        "nom_de_l_elu": "GASDON",
+                                        "prenom_de_l_elu": "Pierre-Henri",
+                                        "filename": "Municipal",
+                                        "com_name": "Châtillon-En-Vendelais"
+                                    },
+                                    "record_timestamp": "2022-01-01T21:00:04.073000+00:00"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/demography/insee-code/{inseeCode}": {
+            "get": {
+                "x-swagger-router-controller": "demography",
+                "operationId": "inseeCode",
+                "tags": ["demography"],
+                "description": "Get city demography by insee code",
+                "parameters": [
+                    {
+                        "name": "inseeCode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Insee code of the city"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": {
+                                "inseeCode": "29232",
+                                "datas": [
+                                    {
+                                        "annee": 2008,
+                                        "population_municipale": 63929,
+                                        "population_comptee_a_part": 3345,
+                                        "population_totale": 67274
+                                    },
+                                    {
+                                        "annee": 2013,
+                                        "population_municipale": 63532,
+                                        "population_comptee_a_part": 3394,
+                                        "population_totale": 66926
+                                    },
+                                    {
+                                        "annee": 2019,
+                                        "population_municipale": 63283,
+                                        "population_comptee_a_part": 2478,
+                                        "population_totale": 65761
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/images/name/{name}/{limit}": {
+            "get": {
+                "x-swagger-router-controller": "images",
+                "operationId": "name",
+                "tags": ["images"],
+                "description": "Get city pictures from google image",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Full name of the city"
+                    },
+                    { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "id": 0,
+                                    "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Quimper2011.png"
+                                },
+                                {
+                                    "id": 1,
+                                    "url": "https://img-4.linternaute.com/HLJDqlPRu3rvAwoUkiXtbAqKjCo=/1240x/smart/8424da911bf1488f82a6da8d627d781a/ccmcms-linternaute/23651022.jpg"
+                                },
+                                {
+                                    "id": 2,
+                                    "url": "https://media.gettyimages.com/photos/quimper-place-de-la-terre-au-duc-picture-id458067411?s=612x612"
+                                },
+                                {
+                                    "id": 3,
+                                    "url": "https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=47.99595&lon=-4.09992&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*"
+                                },
+                                {
+                                    "id": 4,
+                                    "url": "https://edito.seloger.com/sites/default/files/styles/735x412/public/edito_migrate/article/image/immobiler-quimper.jpg?itok=bIqZs404"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
