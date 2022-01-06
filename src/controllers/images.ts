@@ -5,9 +5,7 @@ async function byName(name: string, limit?: number): Promise<FinalResult[]> {
   const results: Results = await GOOGLE_IMG_SCRAP({
     search: name,
     safeSearch: false,
-    execute: function (element: FinalResult) {
-      if (!element.url.match('gstatic.com')) return element;
-    },
+    filterByTitles:[[name]]
   });
   results &&
     results.result.forEach((result: FinalResult) => {
