@@ -790,7 +790,7 @@
             "type": "string",
             "description": "Full name of the city"
           },
-          { "name": "limit", "in": "path", "required": false, "type": "integer", "description": "Results limit." }
+          { "name": "limit", "in": "path", "required": true, "type": "integer", "description": "Results limit." }
         ],
         "responses": {
           "200": {
@@ -856,7 +856,47 @@
           "200": {
             "description": "successful operation",
             "examples": {
-              "application/json": []
+              "application/json": [
+                {
+                  "datasetid": "osm-fr-lieux-de-culte",
+                  "recordid": "2717f3d38952a87d71f587997dc63d90524cd9cc",
+                  "fields": {
+                    "source": "BMO/Ofis ar Brezhoneg janv2011",
+                    "denomination": "catholic",
+                    "wikidata": "https://www.wikidata.org/wiki/Q60385103",
+                    "name": "Église Notre-Dame du Bouguen",
+                    "id": "https://www.openstreetmap.org/api/0.6/node/42513555",
+                    "religion": "christian",
+                    "geo_point_2d": [48.4027468, -4.5044868000000005],
+                    "other_tags": "{\"bmo:type\": \"D\", \"building\": \"church\", \"name:br\": \"Iliz Itron-Varia ar Bougenn\"}",
+                    "ref_fr_cef": "29019_03",
+                    "dist": "203.40227704875772"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-4.5044868000000005, 48.4027468]
+                  }
+                },
+                {
+                  "datasetid": "osm-fr-lieux-de-culte",
+                  "recordid": "2bd1378a9da40f7bf01f62397de9dcc9bb0a092b",
+                  "fields": {
+                    "source": "BMO2009",
+                    "denomination": "catholic",
+                    "name": "Église Notre-Dame de Kerinou",
+                    "id": "https://www.openstreetmap.org/api/0.6/node/42514502",
+                    "religion": "christian",
+                    "geo_point_2d": [48.4034744, -4.4893516],
+                    "other_tags": "{\"bmo:type\": \"D\", \"building\": \"church\"}",
+                    "ref_fr_cef": "29019_17",
+                    "dist": "916.9198068570131"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-4.4893516, 48.4034744]
+                  }
+                }
+              ]
             }
           }
         }
