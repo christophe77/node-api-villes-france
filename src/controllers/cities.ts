@@ -6,7 +6,7 @@ const cityArray: City[] = cityDb.all();
 function byName(name: string, limit?: number): City[] {
   const tempCities: City[] = [];
   cityArray.forEach((city: City) => {
-    if (city.name?.toLocaleLowerCase().includes(name)) {
+    if (city.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase())) {
       tempCities.push(city);
     }
   });

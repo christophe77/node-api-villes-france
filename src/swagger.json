@@ -849,7 +849,7 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "description": "Permiter of search in meters (m)."
+            "description": "Perimiter of search in meters (m)."
           }
         ],
         "responses": {
