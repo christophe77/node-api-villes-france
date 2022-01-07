@@ -7,7 +7,8 @@ async function byName(name: string, limit: number): Promise<FinalResult[]> {
     limit,
     safeSearch: false,
     execute: function (element: FinalResult) {
-      if (!element.url.match('gstatic.com')) return element;
+      if (!element.url.match('gstatic.com') && !element.url.match('fbsbx.com') && !element.url.match('facebook'))
+        return element;
     },
   });
   results &&
