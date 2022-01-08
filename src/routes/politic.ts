@@ -18,4 +18,9 @@ politicRouter.get('/department/:departmentName', (req, res) => {
   politic.byDepartment(departmentName, res);
 });
 
+politicRouter.get('/inseeCode/:inseeCode', (req, res) => {
+  const { inseeCode } = req.params;
+  politic.byInseeCode(inseeCode, res);
+});
+
 export default politicRouter;

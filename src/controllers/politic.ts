@@ -10,7 +10,7 @@ function httpsRequest(args: string, res: Response) {
     path: '',
   };
   const pathStart =
-    '/api/records/1.0/search/?dataset=donnees-du-repertoire-national-des-elus&q=&rows=10&facet=date_de_naissance&facet=libelle_de_la_fonction&facet=filename&facet=code_sexe&facet=reg_name&facet=dep_name&facet=epci_name&facet=com_name';
+    '/api/records/1.0/search/?dataset=donnees-du-repertoire-national-des-elus&q=&facet=date_de_naissance&facet=libelle_de_la_fonction&facet=filename&facet=code_sexe&facet=reg_name&facet=dep_name&facet=epci_name&facet=com_name';
   options.path = `${pathStart}${args}`;
 
   https
@@ -37,9 +37,14 @@ function byDepartment(department: string, res: Response) {
   const args = `&refine.dep_name=${capitalize(department)}`;
   httpsRequest(args, res);
 }
+function byInseeCode(inseeCode: string, res: Response) {
+  const args = `&refine.com_code=${inseeCode}`;
+  httpsRequest(args, res);
+}
 
 export const politic = {
   byRegion,
   byCity,
   byDepartment,
+  byInseeCode
 };

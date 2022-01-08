@@ -581,6 +581,82 @@
         }
       }
     },
+    "/politic/city/{inseeCode}": {
+      "get": {
+        "x-swagger-router-controller": "politic",
+        "operationId": "inseeCode",
+        "tags": ["politic"],
+        "description": "Get politicians by city name",
+        "parameters": [
+          {
+            "name": "inseeCode",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Insee code of the city"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "examples": {
+              "application/json": [
+                {
+                  "datasetid": "donnees-du-repertoire-national-des-elus",
+                  "recordid": "246ae8de3a50db9a8f25931fb5ab7e443c072094",
+                  "fields": {
+                    "reg_code": "53",
+                    "code_sexe": "F",
+                    "epci_code": "242900314",
+                    "dep_name": "Finistère",
+                    "code_nationalite": "FR",
+                    "reg_name": "Bretagne",
+                    "dep_code": "29",
+                    "code_de_la_categorie_socio_professionnelle": "33",
+                    "date_de_debut_du_mandat": "2020-06-28",
+                    "epci_name": "Brest Métropole",
+                    "com_code": "29019",
+                    "date_de_naissance": "1983-09-03",
+                    "libelle_de_la_categorie_socio_professionnelle": "Cadre de la fonction publique",
+                    "nom_de_l_elu": "CLEUZIOU",
+                    "prenom_de_l_elu": "Anne-Catherine",
+                    "filename": "Municipal",
+                    "com_name": "Brest"
+                  },
+                  "record_timestamp": "2022-01-01T21:00:04.073000+00:00"
+                },
+                {
+                  "datasetid": "donnees-du-repertoire-national-des-elus",
+                  "recordid": "929ce5b812005c4c1d24a4083426b0e750439983",
+                  "fields": {
+                    "reg_code": "53",
+                    "code_sexe": "M",
+                    "epci_code": "242900314",
+                    "date_de_debut_de_la_fonction": "2020-04-07",
+                    "libelle_de_la_fonction": "10ème adjoint au Maire",
+                    "dep_name": "Finistère",
+                    "code_nationalite": "FR",
+                    "reg_name": "Bretagne",
+                    "dep_code": "29",
+                    "code_de_la_categorie_socio_professionnelle": "55",
+                    "date_de_debut_du_mandat": "2020-06-28",
+                    "epci_name": "Brest Métropole",
+                    "com_code": "29019",
+                    "date_de_naissance": "1978-02-04",
+                    "libelle_de_la_categorie_socio_professionnelle": "Employé de commerce",
+                    "nom_de_l_elu": "NÉDÉLEC",
+                    "prenom_de_l_elu": "Yohann",
+                    "filename": "Municipal",
+                    "com_name": "Brest"
+                  },
+                  "record_timestamp": "2022-01-01T21:00:04.073000+00:00"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
     "/politic/department/{departmentName}": {
       "get": {
         "x-swagger-router-controller": "politic",
